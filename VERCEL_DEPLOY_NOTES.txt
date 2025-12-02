@@ -1,0 +1,11 @@
+Vercel deployment notes
+-----------------------
+This project is prepared for Vercel:
+
+- vercel.json routes requests to backend/server.py and uses the Python runtime.
+- requirements.txt at repository root lists Python runtime dependencies for Vercel to install.
+- The FastAPI app in backend/server.py exposes the ASGI `app` variable (required).
+- If you use a MongoDB connection, set the MONGO_URI environment variable in your Vercel Project Settings.
+- To deploy:
+    1. Push this repo to GitHub (or connect your repo to Vercel).
+    2. In Vercel, import the repo and deploy. Vercel will detect the Python runtime and run your FastAPI app.

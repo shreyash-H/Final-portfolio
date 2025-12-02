@@ -1,0 +1,12 @@
+Deploy-ready package (automatic edits):
+- Rewrote backend/server.py to be a complete, deployable FastAPI app with health and CRUD endpoints.
+- Added backend/Dockerfile and backend/Procfile for container and PaaS deployment.
+- Added backend/.env.example to show runtime env variables.
+- If you have a MONGO_URI set in backend/.env or environment, the app will connect to MongoDB. Otherwise an in-memory store is used.
+- To run locally:
+    cd backend
+    pip install -r requirements.txt
+    uvicorn server:app --reload
+- To build Docker:
+    docker build -t my-backend:latest .
+    docker run -p 8000:8000 my-backend:latest
